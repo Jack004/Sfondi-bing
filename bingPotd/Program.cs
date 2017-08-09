@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace bingPotd
 {
-    class Program
+
+
+    static class Program
     {
         [DllImport("User32", CharSet = CharSet.Auto)]
         public static extern int SystemParametersInfo(int uiAction, int uiParam,
         string pvParam, uint fWinIni);
 
-        static void Main(string[] args)
+        public static void DownloadAndSetImg()
         {
-
             XmlDocument xml = new XmlDocument();
             xml.Load("https://www.bing.com/HPImageArchive.aspx?format=xml&idx=0&n=1&mkt=it-It"); //Load NOT LoadXml
 
@@ -25,5 +27,18 @@ namespace bingPotd
             //if false file not found
             SystemParametersInfo(0x0014, 0, Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "\\potd.jpg", 0x0001);
         }
+
+        static void Main(string[] args) {
+            if (args.Length == 0) {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Form1());
+            }
+            else
+                if(args[0] == "-auto")
+                    DownloadAndSetImg();
+        }
+
+
     }
 }
