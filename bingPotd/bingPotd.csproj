@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0F66EE68-CA9F-48CA-B673-CC11DD29E4F0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Sfondi_bing</RootNamespace>
-    <AssemblyName>Sfondi bing</AssemblyName>
+    <RootNamespace>bingPotd</RootNamespace>
+    <AssemblyName>bingPotd</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
