@@ -3,7 +3,7 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Xml;
 
-namespace Sfondi_bing
+namespace bingPotd
 {
     class Program
     {
